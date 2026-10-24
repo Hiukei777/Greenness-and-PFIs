@@ -26,5 +26,8 @@ Table*.csv
 Table*.xlsx
 Table*.pdf
 
+# R default graphics device output
+Rplots.pdf
+
 # Logs
 *.log
