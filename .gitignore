@@ -1,0 +1,30 @@
+# R
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+renv/library/
+renv/local/
+*.Rproj
+
+# macOS / Windows
+.DS_Store
+Thumbs.db
+
+# Input data: individual-level records are not distributed
+data/*.csv
+data/*.geojson
+china.geojson
+Subgroup/*.csv
+
+# Generated figures and tables
+Figure*.pdf
+Figure*.png
+Figure*.tiff
+Table*.csv
+Table*.xlsx
+Table*.pdf
+
+# Logs
+*.log

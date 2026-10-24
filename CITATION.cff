@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the manuscript and this repository."
+title: "Residential greenness and pulmonary fungal infections: analysis code"
+abstract: >-
+  R code reproducing the tables and figures of the manuscript examining
+  associations between residential greenness (NDVI, EVI at 250, 500 and 1000 m)
+  and pulmonary fungal infections in a 1:3 propensity-score-matched
+  case-control study.
+type: software
+authors:
+  - family-names: "TODO"
+    given-names: "TODO"
+    affiliation: "TODO"
+version: 1.0.0
+date-released: "2026-10-24"
+license: MIT
+repository-code: "https://github.com/TODO/TODO"
+keywords:
+  - greenness
+  - NDVI
+  - EVI
+  - pulmonary fungal infection
+  - propensity score matching
+  - conditional logistic regression
