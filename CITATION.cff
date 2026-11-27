@@ -8,9 +8,8 @@ abstract: >-
   case-control study.
 type: software
 authors:
-  - family-names: "TODO"
-    given-names: "TODO"
-    affiliation: "TODO"
+  - family-names: "Zhu"
+    given-names: "Xiao-Qi"
 version: 1.0.0
 date-released: "2026-10-24"
 license: MIT
