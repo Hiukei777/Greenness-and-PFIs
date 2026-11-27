@@ -133,7 +133,7 @@ s11_display <- function(ex) {
       Q2 = s$Q2, 
       Q3 = s$Q3, 
       Q4 = s$Q4,
-      `P for trend` = fmt_p(s$P_trend),  # 这一行会动态匹配 2 行或 4 行
+      `P for trend` = fmt_p(s$P_trend),  # recycled over the 2 or 4 rows of the subgroup
       `P for interaction` = c(fmt_p(s$P_interaction[1]), rep("", nrow(s) - 1)),
       check.names = FALSE, stringsAsFactors = FALSE
     )

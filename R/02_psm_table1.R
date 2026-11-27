@@ -16,8 +16,9 @@ source(file.path("R", "00_setup.R"))
 
 #####PSM#######
 set.seed(1234)
-data$occupation_4 <- factor(data$occupation_4)
-data$seasons      <- factor(data$seasons)
+catVars <- c("sex", "occupation_4","alcohol_hx", "smoking_hx", 
+             "copd", "diabetes", "tuberculosis","malignant", "haematological", "immunosuppression", "seasons")
+data[catVars] <- lapply(data[catVars], factor)
 match.it <- matchit(group_01 ~ age + sex + occupation_4  + alcohol_hx + smoking_hx #  + Urbanization
                      + copd + diabetes + tuberculosis + malignant + haematological + immunosuppression  
                     + pop  + mean_temp0 + mean_humid + seasons,  data = data, #

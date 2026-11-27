@@ -11,13 +11,15 @@ for the same data-sharing reasons as `data/data.csv`.
 | `matchdatam_occu4.csv` | `occupation_4` (4 categories) | Figure 3 e–f, Table S12 |
 | `matchdatam_urban01.csv` | `Urban_01` (low / high urbanization) | Figure 3 g–h, Table S12 |
 | `matchdatam_season01.csv` | `season_01` (cold / warm season) | Figure 3 i–j, Table S12 |
-| `matchdatam_pre_existing.csv` | `pre_existing` (yes / no) | Figure 3 k–l, Table S12 |
+| `matchdatam_pre_existing.csv` | `pre_existing` (yes / no) | Figure 3 k–l, Table S12 (matched 1:1) |
 
 Each file has the same columns as `data.csv` plus the matching output of
 `MatchIt` (`distance`, `weights`, `subclass`). They are produced by the
 subgroup-specific propensity-score matching step: the same propensity-score
-model, caliper and 1:3 ratio as the main analysis, with exact matching on the
-subgroup variable. `R/06_figure3_subgroup.R` regenerates
+model and caliper (0.2 SD of the logit PS) as the main analysis, with exact
+matching on the subgroup variable. Age, sex, occupation, urbanization and season
+use 1:3 matching, as in the main analysis; the pre-existing-disease dataset uses
+1:1 matching. `R/06_figure3_subgroup.R` regenerates
 `matchdatam_pre_existing.csv` itself (see the first block of that script), so
 that file is optional; the other five are required inputs.
 

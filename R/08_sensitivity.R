@@ -121,7 +121,7 @@ write.csv(s4_bal, "TableS4_iptw_bal.csv", row.names = FALSE)
 write.csv(s4_long, "TableS4.csv", row.names = FALSE)
 
 # Figure S5 Love Plot_iptw 10*8
-d_total <- data[data$group_01 == 0 | data$group_01 == 1, ] # 以Total为例
+d_total <- data[data$group_01 == 0 | data$group_01 == 1, ] # total sample as an example
 w_total <- weightit(as.formula(paste("group_01 ~", paste(COVARS, collapse = " + "))), 
                     data = d_total, method = "glm", estimand = "ATT")
 love.plot(w_total, stats = "mean.diffs", abs = TRUE, thresholds = c(m = 0.1), 

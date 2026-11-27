@@ -107,6 +107,24 @@ steps:
 No modelling code, covariate set, matching parameter, seed or plotting
 parameter was altered.
 
+### Revision of November 2026
+
+The analysis script was revised after the first version of this repository was
+prepared. Both changes are carried over verbatim:
+
+1. `R/02_psm_table1.R` — all categorical covariates (`sex`, `occupation_4`,
+   `alcohol_hx`, `smoking_hx`, `copd`, `diabetes`, `tuberculosis`, `malignant`,
+   `haematological`, `immunosuppression`, `seasons`) are declared as factors
+   before the propensity-score model and matching, instead of only
+   `occupation_4` and `seasons`. For binary 0/1 variables this leaves the
+   propensity score and the matched sets unchanged.
+2. `R/06_figure3_subgroup.R` — the pre-existing-disease subgroup is now matched
+   1:1 (exact on `pre_existing`) instead of 1:3. The other five subgroup
+   datasets keep 1:3 matching.
+
+The main analysis (1:3 matching, Tables 1–3, Figures 1–2) is unaffected by
+either change.
+
 ## Citation
 
 If you use this code, please cite the manuscript (see `CITATION.cff`).

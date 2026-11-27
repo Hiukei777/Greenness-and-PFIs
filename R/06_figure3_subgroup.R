@@ -5,6 +5,10 @@
 # Panels   : age, sex, occupation, urbanization, season, pre-existing disease
 # Outputs  : Figure 3 Subgroup.pdf, Subgroup/matchdatam_pre_existing.csv
 #
+# Matching : the pre-existing-disease panel is matched 1:1 with exact matching
+#            on pre_existing (first block below); the other five panels read
+#            the 1:3 datasets in Subgroup/.
+#
 # Requires : R/00_setup.R, and the subgroup-matched datasets in Subgroup/
 #            (matchdatam_age.csv, _sex.csv, _occu4.csv, _urban01.csv,
 #             _season01.csv). See Subgroup/README.md.
@@ -36,7 +40,7 @@ psModel <- glm(formula = group_01 ~ age + sex  + occupation_4 + alcohol_hx + smo
 data$ps=predict(psModel,type="response")
 set.seed(1234)
 match_subgroup <- matchit(group_01 ~ ps, data = data, method = "nearest", caliper = 0.2, std.caliper = TRUE,   
-  m.order= "random", ratio = 3, replace  = F,exact = ~ pre_existing, distance = data$ps)
+  m.order= "random", ratio = 1, replace  = F,exact = ~ pre_existing, distance = data$ps)
 matchdatam <- match.data(match_subgroup)
 write.csv(matchdatam,"Subgroup/matchdatam_pre_existing.csv")
 
