@@ -16,8 +16,6 @@ license: MIT
 repository-code: "https://github.com/Hiukei777/Greenness-and-PFIs"
 keywords:
   - greenness
-  - NDVI
-  - EVI
   - pulmonary fungal infection
   - propensity score matching
   - conditional logistic regression
